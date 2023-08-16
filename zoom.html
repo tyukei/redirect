@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoom OAuth Redirect</title>
+    <script>
+        // ページのロード時にこの関数を実行
+        window.onload = function() {
+            // URLからクエリパラメータを取得
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            // 'code'パラメータを取得
+            const code = urlParams.get('code');
+            
+            // コードをページに表示
+            document.getElementById('authCode').textContent = code;
+            
+            // 必要に応じて、このコードをサーバーに送信するなどの追加の処理を行うことができます。
+        };
+    </script>
+</head>
+<body>
+    <h2>Zoom OAuth Redirect</h2>
+    <p>Received Authentication Code:</p>
+    <pre id="authCode"></pre>
+</body>
+</html>
